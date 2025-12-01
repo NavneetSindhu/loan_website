@@ -71,9 +71,9 @@ const ChatWidget: React.FC = () => {
 
   // 1. Initialize Gemini Chat Session
   useEffect(() => {
-    if (!chatSessionRef.current && process.env.API_KEY) {
+    if (!chatSessionRef.current && import.meta.env.VITE_API_KEY) {
       try {
-        const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+        const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY });
         chatSessionRef.current = ai.chats.create({
           model: 'gemini-2.5-flash',
           config: {
