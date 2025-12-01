@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sterling Loans | Premium Financial Partners</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Updated Fonts: Manrope for UI/Numbers, Outfit for Headings -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- PDF Generation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              // Manrope is excellent for UI and Numbers (Calculators)
+              sans: ['Manrope', 'sans-serif'], 
+              // Outfit replaces Playfair for a modern, geometric, premium heading style
+              serif: ['Outfit', 'sans-serif'], 
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'float-delayed': 'float 6s ease-in-out 3s infinite',
+              'fade-up': 'fadeUp 0.8s ease-out forwards',
+              'fade-in': 'fadeIn 0.5s ease-out forwards',
+              'blob': 'blob 7s infinite',
+              'spin-slow': 'spin 12s linear infinite',
+              'wiggle': 'wiggle 0.25s ease-in-out 4',
+              'key-enter': 'keyEnter 1.5s ease-out forwards',
+              'house-pulse': 'housePulse 1.5s ease-out forwards',
+              'unlock-key': 'unlockKey 2s ease-out forwards',
+              'unlock-house': 'unlockHouse 2s ease-out forwards',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              },
+              fadeUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              blob: {
+                '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                '100%': { transform: 'translate(0px, 0px) scale(1)' },
+              },
+              wiggle: {
+                '0%, 100%': { transform: 'rotate(-6deg)' },
+                '50%': { transform: 'rotate(6deg)' },
+              },
+              keyEnter: {
+                '0%': { transform: 'translate(20px, 20px) rotate(45deg)', opacity: '0' },
+                '50%': { transform: 'translate(0px, 0px) rotate(0deg)', opacity: '1' },
+                '70%': { transform: 'rotate(-10deg)' },
+                '85%': { transform: 'rotate(10deg)' },
+                '100%': { transform: 'rotate(0deg)' },
+              },
+              housePulse: {
+                '0%, 40%': { transform: 'scale(1)', color: '#94a3b8' }, // slate-400
+                '50%': { transform: 'scale(1.1)', color: '#3b82f6' }, // blue-500
+                '100%': { transform: 'scale(1)', color: '#60a5fa' }, // blue-400
+              },
+              unlockKey: {
+                '0%': { transform: 'translateX(-20px) rotate(-45deg)', opacity: '0' },
+                '40%': { transform: 'translateX(0px) rotate(0deg)', opacity: '1' },
+                '50%': { transform: 'translateX(2px)' }, // Insert
+                '60%': { transform: 'translateX(2px) rotate(10deg)' }, // Turn
+                '100%': { transform: 'translateX(2px) rotate(10deg)', opacity: '1' }
+              },
+              unlockHouse: {
+                '0%, 50%': { transform: 'scale(1)', filter: 'brightness(1)' },
+                '60%': { transform: 'scale(1.05)', filter: 'brightness(1.2)' }, // Unlock reaction
+                '100%': { transform: 'scale(1)', filter: 'brightness(1)' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root {
+        --spotlight-color: rgba(37, 99, 235, 0.25); /* Reduced opacity for Light Mode */
+      }
+      .dark {
+        --spotlight-color: rgba(59, 130, 246, 0.35); /* Maintained intensity for Dark Mode */
+      }
+
+      body {
+        font-family: 'Manrope', sans-serif;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      .glass {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+      .dark .glass {
+        background: rgba(15, 23, 42, 0.7);
+      }
+      
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+      }
+      .dark ::-webkit-scrollbar-thumb {
+        background: #475569;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+      
+      /* Utilities for cursor */
+      .cursor-none {
+        cursor: none !important;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased selection:bg-blue-200 dark:selection:bg-blue-900">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
