@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -38,6 +39,7 @@
               'house-pulse': 'housePulse 1.5s ease-out forwards',
               'unlock-key': 'unlockKey 2s ease-out forwards',
               'unlock-house': 'unlockHouse 2s ease-out forwards',
+              'scroll-x': 'scrollX 30s linear infinite',
             },
             keyframes: {
               float: {
@@ -85,6 +87,10 @@
                 '0%, 50%': { transform: 'scale(1)', filter: 'brightness(1)' },
                 '60%': { transform: 'scale(1.05)', filter: 'brightness(1.2)' }, // Unlock reaction
                 '100%': { transform: 'scale(1)', filter: 'brightness(1)' }
+              },
+              scrollX: {
+                '0%': { transform: 'translateX(0)' },
+                '100%': { transform: 'translateX(-33.33%)' }
               }
             }
           }
@@ -134,6 +140,11 @@
       .cursor-none {
         cursor: none !important;
       }
+      /* 3D Depth Utilities for Parallax */
+      .translate-z-0 { transform: translateZ(0); }
+      .translate-z-10 { transform: translateZ(10px); }
+      .translate-z-20 { transform: translateZ(20px); }
+      .translate-z-30 { transform: translateZ(30px); }
     </style>
   <script type="importmap">
 {

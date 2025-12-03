@@ -89,15 +89,15 @@ const Footer: React.FC = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 group">
                 <MapPin className="text-blue-500 shrink-0 mt-1" size={18} />
-                <span className="text-sm group-hover:text-blue-600 transition-colors">123 Financial District Blvd,<br/>Suite 400, New York, NY 10005</span>
+                <span className="text-sm group-hover:text-blue-600 transition-colors">Level 45, 101 Collins Street,<br/>Melbourne, VIC 3000</span>
               </li>
               <li className="flex items-center gap-3 group">
                 <Phone className="text-blue-500 shrink-0" size={18} />
-                <span className="text-sm group-hover:text-blue-600 transition-colors">+1 (555) 123-4567</span>
+                <span className="text-sm group-hover:text-blue-600 transition-colors">+61 (03) 9654 1234</span>
               </li>
               <li className="flex items-center gap-3 group">
                 <Mail className="text-blue-500 shrink-0" size={18} />
-                <span className="text-sm group-hover:text-blue-600 transition-colors">hello@sterlingloans.com</span>
+                <span className="text-sm group-hover:text-blue-600 transition-colors">hello@sterlingloans.com.au</span>
               </li>
             </ul>
           </div>
@@ -127,7 +127,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col items-center text-xs text-slate-500 dark:text-slate-500">
-          <p className="mb-4">&copy; {currentYear} Sterling Loans. All rights reserved. NMLS #123456.</p>
+          <p className="mb-4">&copy; {currentYear} Sterling Loans Australia. All rights reserved. ACL #123456.</p>
           <div className="flex gap-6">
              <a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Privacy Policy</a>
              <a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Terms of Service</a>

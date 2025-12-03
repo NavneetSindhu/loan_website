@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Mail, Phone, MapPin, Send, Loader2, ArrowRight, Clock, Navigation, Linkedin, Facebook, Instagram } from 'lucide-react';
 import Button from '../components/UI/Button';
@@ -95,7 +96,7 @@ const Contact: React.FC = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-slate-900 dark:text-white">Phone</h3>
-                      <p className="text-slate-600 dark:text-slate-300 font-medium text-lg">+1 (555) 123-4567</p>
+                      <p className="text-slate-600 dark:text-slate-300 font-medium text-lg">+61 (03) 9654 1234</p>
                       <div className="text-sm text-slate-400 flex items-center justify-center md:justify-start gap-2 mt-1">
                          {isOpen ? (
                            <span className="flex items-center gap-1.5 text-green-600 dark:text-green-400 font-medium bg-green-100 dark:bg-green-900/30 px-2 py-0.5 rounded-full text-xs">
@@ -108,7 +109,7 @@ const Contact: React.FC = () => {
                          ) : (
                            <span className="text-xs bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-full">Closed</span>
                          )}
-                         <span>Mon-Fri 9am-6pm EST</span>
+                         <span>Mon-Fri 9am-6pm AEST</span>
                       </div>
                     </div>
                 </div>
@@ -120,7 +121,7 @@ const Contact: React.FC = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-slate-900 dark:text-white">Email</h3>
-                      <p className="text-slate-600 dark:text-slate-300 font-medium">james@sterlingloans.com</p>
+                      <p className="text-slate-600 dark:text-slate-300 font-medium">hello@sterlingloans.com.au</p>
                       <p className="text-sm text-slate-400 mt-1">Response within 24h</p>
                     </div>
                 </div>
@@ -132,8 +133,8 @@ const Contact: React.FC = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-slate-900 dark:text-white">Office</h3>
-                      <p className="text-slate-600 dark:text-slate-300 font-medium">123 Financial District Blvd</p>
-                      <p className="text-sm text-slate-400 mt-1">Suite 400, New York, NY 10005</p>
+                      <p className="text-slate-600 dark:text-slate-300 font-medium">Level 45, 101 Collins Street</p>
+                      <p className="text-sm text-slate-400 mt-1">Melbourne, VIC 3000</p>
                     </div>
                 </div>
               </div>
@@ -163,7 +164,7 @@ const Contact: React.FC = () => {
             {/* Map */}
              <div className="w-full h-48 md:h-64 bg-slate-200 dark:bg-slate-800 rounded-3xl overflow-hidden shadow-inner relative group">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00980168459418!3d40.71328497933185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a1905307f59%3A0xc6c766b3f7f0e8f!2sFinancial%20District%2C%20New%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.9692!3d-37.8141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642b8c21cb29b%3A0x1c045678462e3c90!2s101%20Collins%20St%2C%20Melbourne%20VIC%203000%2C%20Australia!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus" 
                   width="100%" 
                   height="100%" 
                   style={{border:0}} 
@@ -223,10 +224,11 @@ const Contact: React.FC = () => {
                     <select 
                       className="w-full px-4 py-4 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50 text-slate-900 dark:text-white focus:border-blue-500 dark:focus:border-blue-400 focus:bg-white dark:focus:bg-slate-900 outline-none transition-all appearance-none cursor-pointer"
                     >
-                      <option>Home Loan / Mortgage</option>
-                      <option>Personal Loan</option>
-                      <option>Business Loan</option>
-                      <option>Refinancing</option>
+                      <option>Home Purchase / Pre-Approval</option>
+                      <option>Refinance</option>
+                      <option>FHA / VA Loan</option>
+                      <option>Jumbo / Luxury Loan</option>
+                      <option>Investment Property</option>
                     </select>
                     <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
                       <ArrowRight size={16} className="text-slate-400 rotate-90" />

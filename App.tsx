@@ -15,6 +15,7 @@ import NotFound from './pages/NotFound';
 import { ThemeProvider } from './context/ThemeContext';
 import { ToastProvider } from './context/ToastContext';
 import { ApplicationProvider } from './context/ApplicationContext';
+import { ChatProvider } from './context/ChatContext';
 import ScrollToTopButton from './components/UI/ScrollToTopButton';
 import Spotlight from './components/UI/Spotlight';
 import HeroCustomCursor from './components/UI/HeroCustomCursor';
@@ -43,7 +44,16 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       
       {isHome && <HeroCustomCursor />}
       
-      <Navbar />
+      <div className="fixed top-0 left-0 right-0 z-[130]">
+        <Navbar />
+      </div>
+      
+      {/* 
+         Spacer for fixed navbar.
+         CRITICAL: Only show this spacer on non-home pages. 
+         On Home, we want the Hero content to start at the very top (under the transparent navbar).
+      */}
+      {!isHome && <div className="h-16 lg:h-20"></div>}
       
       {/* 
          Main content wrapper.
@@ -68,28 +78,30 @@ const App: React.FC = () => {
     <ThemeProvider>
       <ToastProvider>
         <ApplicationProvider>
-          <HashRouter>
-            <ScrollReset />
-            <Layout>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/loans" element={<LoanTypes />} />
-                <Route path="/calculator" element={<Calculator />} />
-                <Route path="/testimonials" element={<Testimonials />} />
-                <Route path="/faq" element={<FAQ />} />
-                <Route path="/contact" element={<Contact />} />
-                
-                {/* Explicitly redirect /home to / to ensure consistent landing behavior */}
-                <Route path="/home" element={<Navigate to="/" replace />} />
-                <Route path="/index" element={<Navigate to="/" replace />} />
-                
-                {/* Catch-all route shows 404 Page */}
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </Layout>
-          </HashRouter>
+          <ChatProvider>
+            <HashRouter>
+              <ScrollReset />
+              <Layout>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/services" element={<Services />} />
+                  <Route path="/loans" element={<LoanTypes />} />
+                  <Route path="/calculator" element={<Calculator />} />
+                  <Route path="/testimonials" element={<Testimonials />} />
+                  <Route path="/faq" element={<FAQ />} />
+                  <Route path="/contact" element={<Contact />} />
+                  
+                  {/* Explicitly redirect /home to / to ensure consistent landing behavior */}
+                  <Route path="/home" element={<Navigate to="/" replace />} />
+                  <Route path="/index" element={<Navigate to="/" replace />} />
+                  
+                  {/* Catch-all route shows 404 Page */}
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </Layout>
+            </HashRouter>
+          </ChatProvider>
         </ApplicationProvider>
       </ToastProvider>
     </ThemeProvider>
